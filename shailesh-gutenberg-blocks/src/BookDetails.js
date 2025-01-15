@@ -91,13 +91,17 @@ const BookDetails = ( { props } ) => {
                     <button className="buy-button">BUY FROM AMAZON</button>
                 </a>
 
-                <img
-                    src={logo}
-                    alt="Penguin logo"
-                    width={40}
-                    height={40}
-                    className="publisher-logo"
-                />
+                <div className="publisher-logo-wrapper">
+                    <hr className="line left-line" />
+                    <img
+                        src={logo}
+                        alt="Publisher logo"
+                        width={40}
+                        height={40}
+                        className="publisher-logo"
+                    />
+                    <hr className="line right-line" />
+                </div>
             </div>
         </div>
     )

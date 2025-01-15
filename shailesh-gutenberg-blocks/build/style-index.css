@@ -43,7 +43,6 @@
   /* Book title */
   /* Author text */
   /* Buy button */
-  /* Publisher logo */
 }
 .wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content a {
   outline: 0;
@@ -76,7 +75,19 @@
   cursor: pointer;
   margin-bottom: 32px;
 }
-.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .publisher-logo {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .publisher-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Publisher logo */
+}
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .publisher-logo-wrapper hr.line {
+  width: 120px;
+  border-top: 1px solid #000;
+  margin: 10px 25px 0;
+}
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .publisher-logo-wrapper .publisher-logo {
   width: 40px;
   height: 40px;
 }

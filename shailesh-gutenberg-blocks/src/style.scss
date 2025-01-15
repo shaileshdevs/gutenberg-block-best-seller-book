@@ -75,10 +75,23 @@
 				margin-bottom: 32px;
 			}
 	
-			/* Publisher logo */
-			.publisher-logo {
-				width: 40px;
-				height: 40px;
+			.publisher-logo-wrapper {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				hr.line {
+					width: 120px;
+					border-top: 1px solid #000;
+					margin: 10px 25px 0;
+				}
+	
+				/* Publisher logo */
+				.publisher-logo {
+					width: 40px;
+					height: 40px;
+				}
 			}
 		}
 	}

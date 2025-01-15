@@ -177,13 +177,19 @@ const BookDetails = ({
     href: "#"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "buy-button"
-  }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "publisher-logo-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", {
+    className: "line left-line"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
-    alt: "Penguin logo",
+    alt: "Publisher logo",
     width: 40,
     height: 40,
     className: "publisher-logo"
-  })));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", {
+    className: "line right-line"
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BookDetails);
 
@@ -577,13 +583,19 @@ function Save(props) {
     target: "_blank"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "buy-button"
-  }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "publisher-logo-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", {
+    className: "line left-line"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
-    alt: "Penguin logo",
+    alt: "Publisher logo",
     width: 40,
     height: 40,
     className: "publisher-logo"
-  }))));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", {
+    className: "line right-line"
+  })))));
 }
 
 /***/ }),
