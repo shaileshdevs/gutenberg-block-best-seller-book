@@ -1,60 +1,7 @@
 import { useEffect } from '@wordpress/element';
+import { RichText } from '@wordpress/block-editor';
+
 import logo from "../images/penguine-logo.svg";
-
-import {
-	RichText
-} from '@wordpress/block-editor';
-
-
-// const BookDetails = ( { props } ) => {
-//     const { attributes, setAttributes } = props;
-//     const { selectedGenre } = attributes;
-    
-//     // Fetch best-selling book when genre is selected.
-//     useEffect(() => {
-//         if (selectedGenre) {
-//             async function fetchBestSellingBook() {
-//                 try {
-//                     const response = await fetch(
-//                         `https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/works/views/uk-list-display?api_key=7fqge2qgxcdrwqbcgeywwdj2&catUri=${selectedGenre}`,
-//                         {
-//                             method: 'GET',
-//                             credentials: 'omit',
-//                             headers: { 'Content-Type': 'application/json' }
-//                         }
-//                     );
-//                     const responseData = await response.json();
-//                     const book         = responseData?.data?.works[0];
-
-//                     const tempBestSellingBook = {
-//                         title: book.title,
-//                         author: book.authors[0].authorDisplay,
-//                         coverImageUrl: book.coverUrls.medium.coverUrl, // You might need to adjust this based on the response format
-//                     };
-
-//                     setAttributes({ bestSellingBook: tempBestSellingBook });
-//                 } catch (error) {
-//                     console.error('Error fetching best-selling book:', error);
-//                 }
-//             }
-//             fetchBestSellingBook();
-//         }
-//     }, [selectedGenre]);
-
-//     if ( ! attributes?.bestSellingBook ) {
-//         return '';
-//     }
-
-//     const { title, author, coverImageUrl } = attributes?.bestSellingBook;
-
-//     return (
-//         <div className="best-selling-book">
-//             <h3>{title}</h3>
-//             <p>by {author}</p>
-//             <img src={coverImageUrl} alt={title} style={{ width: '100px' }} />
-//         </div>
-//     )
-// }
 
 const BookDetails = ( { props } ) => {
     const { attributes, setAttributes } = props;
@@ -100,13 +47,9 @@ const BookDetails = ( { props } ) => {
         }
     }, [selectedGenre]);
 
-    console.log('before')
-
     if ( ! attributes?.selectedGenre ) {
         return '';
     }
-
-    console.log(attributes)
 
     const { title, author, coverImageUrl, author_1, author_2 } = attributes?.bestSellingBook;
 
@@ -125,8 +68,6 @@ const BookDetails = ( { props } ) => {
                     <img 
                         src={coverImageUrl}
                         alt={title}
-                        // width={200}
-                        // height={300}
                         className="book-cover"
                     />
                 </a>

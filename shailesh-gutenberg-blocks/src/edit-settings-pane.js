@@ -1,12 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import {
-	InspectorControls,
-} from '@wordpress/block-editor';
-
-import {
-	PanelBody,
-	BaseControl
-} from '@wordpress/components';
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody } from '@wordpress/components';
 
 import GenreSelection from './GenreSelection.js';
 

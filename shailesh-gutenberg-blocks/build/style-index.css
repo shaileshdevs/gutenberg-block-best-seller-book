@@ -11,9 +11,10 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-/* Reset default styles */
-/* Book card container */
-.book-card {
+.wp-block-shailesh-gutenberg-blocks-best-seller {
+  /* Book card container */
+}
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card {
   max-width: 651px;
   max-height: 640px;
   border: 1px solid #0000FF;
@@ -25,13 +26,13 @@
   /* Header styling */
   /* Content area styling */
 }
-.book-card .header {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .header {
   font-family: "Roboto", sans-serif;
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 32px;
 }
-.book-card .content {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content {
   background-color: #E6E6E6;
   padding: 20px;
   display: flex;
@@ -44,27 +45,27 @@
   /* Buy button */
   /* Publisher logo */
 }
-.book-card .content a {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content a {
   outline: 0;
 }
-.book-card .content a .book-cover {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content a .book-cover {
   outline: 0;
 }
-.book-card .content .title {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .title {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 8px;
   text-align: center;
 }
-.book-card .content .author {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .author {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 16px;
   text-align: center;
 }
-.book-card .content .buy-button {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .buy-button {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -75,7 +76,7 @@
   cursor: pointer;
   margin-bottom: 32px;
 }
-.book-card .content .publisher-logo {
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .publisher-logo {
   width: 40px;
   height: 40px;
 }

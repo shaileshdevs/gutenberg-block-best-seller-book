@@ -82,63 +82,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/penguine-logo.svg */ "./images/penguine-logo.svg");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/penguine-logo.svg */ "./images/penguine-logo.svg");
 
 
 
-
-
-// const BookDetails = ( { props } ) => {
-//     const { attributes, setAttributes } = props;
-//     const { selectedGenre } = attributes;
-
-//     // Fetch best-selling book when genre is selected.
-//     useEffect(() => {
-//         if (selectedGenre) {
-//             async function fetchBestSellingBook() {
-//                 try {
-//                     const response = await fetch(
-//                         `https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/works/views/uk-list-display?api_key=7fqge2qgxcdrwqbcgeywwdj2&catUri=${selectedGenre}`,
-//                         {
-//                             method: 'GET',
-//                             credentials: 'omit',
-//                             headers: { 'Content-Type': 'application/json' }
-//                         }
-//                     );
-//                     const responseData = await response.json();
-//                     const book         = responseData?.data?.works[0];
-
-//                     const tempBestSellingBook = {
-//                         title: book.title,
-//                         author: book.authors[0].authorDisplay,
-//                         coverImageUrl: book.coverUrls.medium.coverUrl, // You might need to adjust this based on the response format
-//                     };
-
-//                     setAttributes({ bestSellingBook: tempBestSellingBook });
-//                 } catch (error) {
-//                     console.error('Error fetching best-selling book:', error);
-//                 }
-//             }
-//             fetchBestSellingBook();
-//         }
-//     }, [selectedGenre]);
-
-//     if ( ! attributes?.bestSellingBook ) {
-//         return '';
-//     }
-
-//     const { title, author, coverImageUrl } = attributes?.bestSellingBook;
-
-//     return (
-//         <div className="best-selling-book">
-//             <h3>{title}</h3>
-//             <p>by {author}</p>
-//             <img src={coverImageUrl} alt={title} style={{ width: '100px' }} />
-//         </div>
-//     )
-// }
 
 const BookDetails = ({
   props
@@ -190,11 +139,9 @@ const BookDetails = ({
       fetchBestSellingBook();
     }
   }, [selectedGenre]);
-  console.log('before');
   if (!attributes?.selectedGenre) {
     return '';
   }
-  console.log(attributes);
   const {
     title,
     author,
@@ -204,7 +151,7 @@ const BookDetails = ({
   } = attributes?.bestSellingBook;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "book-card"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     className: "header",
     tagName: "h2",
     placeholder: "Bestsellers",
@@ -218,10 +165,7 @@ const BookDetails = ({
     href: "#"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: coverImageUrl,
-    alt: title
-    // width={200}
-    // height={300}
-    ,
+    alt: title,
     className: "book-cover"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "title"
@@ -234,7 +178,7 @@ const BookDetails = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "buy-button"
   }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
     alt: "Penguin logo",
     width: 40,
     height: 40,
@@ -261,105 +205,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
-// const GenreSelection = ( { props } ) => {
-// 	const { attributes, setAttributes } = props;
-// 	const { selectedGenre } = attributes;
-
-// 	const [ genres, setGenres ] = useState([]);
-
-// 	const selectRef = useRef(null);
-
-// 	// Populate Genres in dropdown.
-// 	useEffect(() => {
-// 		// Fetch genres from the Biblio REST API
-// 		async function fetchGenres() {
-// 			try {
-// 				const response = await fetch(
-// 					'https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/categories?api_key=7fqge2qgxcdrwqbcgeywwdj2&catSetId=PW&rows=15',
-// 					{
-// 						method: 'GET', // HTTP method
-// 						credentials: 'omit', // Do not include credentials (cookies, HTTP auth, etc.)
-// 						headers: {
-// 							'Content-Type': 'application/json',
-// 						},
-// 					}
-// 				);
-
-// 				const responseData = await response.json();
-
-// 				const genresData = responseData.data.categories.map( ( categoryData ) => {
-// 					return {
-// 						id: categoryData.catUri,
-// 						name: categoryData.menuText
-// 					}
-// 				});
-
-// 				console.log('shvsh API successful')
-
-// 				if (selectedGenre) {
-// 					// Set the default selected value
-// 					jQuery(selectRef.current).val(selectedGenre).trigger('change');
-// 				}
-
-// 				setGenres( genresData );
-// 			} catch (error) {
-// 				console.error('Error fetching genres:', error);
-// 			}
-// 		}
-
-// 		fetchGenres();
-// 	}, []);
-
-// 	// Handle genre selection.
-// 	const handleGenreChange = (e) => {
-// 		const genreId   = e.target.value;
-// 		const genre     = genres.find((g) => g.id === genreId);
-// 		const genreName = genre ? genre.name : '';
-
-// 		console.log( 'shvsh genreseelction' );
-// 		console.log(attributes)
-// 		console.log(genreId)
-// 		console.log(genreName)
-
-// 		setAttributes({ selectedGenre: genreId });
-// 		setAttributes({ genreName: genreName });
-// 	};
-
-// 	// Initialize select2.
-// 	useEffect(() => {
-// 		// Initialize Select2
-// 		if (selectRef.current) {
-// 			jQuery(selectRef.current).select2({
-// 				placeholder: 'Search for a genre...',
-// 				data: genres.map((genre) => ({
-// 					id: genre.id,
-// 					text: genre.name,
-// 				})),
-// 			});
-
-// 			// Handle change event
-// 			jQuery(selectRef.current).on('change', handleGenreChange);
-// 		}
-// 	});
-
-// 	// Synchronize selectedGenre with select2.
-// 	// useEffect(() => {
-//     //     if (selectRef.current) {
-//     //         jQuery(selectRef.current).val(selectedGenre).trigger('change');
-//     //     }
-//     // }, [selectedGenre]);
-
-// 	console.log('shvsh check')
-// 	console.log(selectedGenre);
-
-// 	return (
-// 		<select ref={selectRef} style={{ width: '100%' }}>
-// 			<option value="">{selectedGenre ? selectedGenre : 'Select a genre'}</option>
-// 		</select>
-// 	)
-// }
-
 const GenreSelection = ({
   props
 }) => {
@@ -380,9 +225,7 @@ const GenreSelection = ({
       try {
         const response = await fetch('https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/categories?api_key=7fqge2qgxcdrwqbcgeywwdj2&catSetId=PW&rows=15', {
           method: 'GET',
-          // HTTP method
           credentials: 'omit',
-          // Do not include credentials (cookies, HTTP auth, etc.)
           headers: {
             'Content-Type': 'application/json'
           }
@@ -523,26 +366,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _GenreSelection_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GenreSelection.js */ "./src/GenreSelection.js");
-/* harmony import */ var _BookDetails_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookDetails.js */ "./src/BookDetails.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-/* harmony import */ var _edit_settings_pane__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./edit-settings-pane */ "./src/edit-settings-pane.js");
-
-
-// import { registerBlockType } from '@wordpress/blocks';
-
-
-
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _edit_settings_pane__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit-settings-pane */ "./src/edit-settings-pane.js");
+/* harmony import */ var _GenreSelection_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GenreSelection.js */ "./src/GenreSelection.js");
+/* harmony import */ var _BookDetails_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BookDetails.js */ "./src/BookDetails.js");
 
 /**
  * Retrieves the translation of text.
@@ -559,7 +390,6 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -573,6 +403,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -582,27 +414,14 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 function Edit(props) {
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useBlockProps)();
-  const {
-    attributes,
-    setAttributes
-  } = props;
-  const {
-    selectedGenre,
-    genreName,
-    bestSellingBook
-  } = attributes;
-
-  // console.log( 'shvsh props' );
-  // console.log(props)
-
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Choose a genre..."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_GenreSelection_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "Choose a genre..."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_GenreSelection_js__WEBPACK_IMPORTED_MODULE_5__["default"], {
     props
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BookDetails_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BookDetails_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
     props
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_edit_settings_pane__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_edit_settings_pane__WEBPACK_IMPORTED_MODULE_4__["default"], {
     props
   }));
 }
@@ -675,17 +494,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/penguine-logo.svg */ "./images/penguine-logo.svg");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-
-
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/penguine-logo.svg */ "./images/penguine-logo.svg");
 
 /**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+
+
+/**
+ * Internal dependencies.
  */
 
 
@@ -699,7 +521,7 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 function Save(props) {
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
   const {
     attributes,
     setAttributes
@@ -727,7 +549,7 @@ function Save(props) {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "book-card"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     className: "header",
     tagName: "h2",
     value: bestSellerLabel
@@ -756,7 +578,7 @@ function Save(props) {
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "buy-button"
   }, "BUY FROM AMAZON")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
+    src: _images_penguine_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
     alt: "Penguin logo",
     width: 40,
     height: 40,
@@ -797,16 +619,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 module.exports = window["React"];
-
-/***/ }),
-
-/***/ "@wordpress/api-fetch":
-/*!**********************************!*\
-  !*** external ["wp","apiFetch"] ***!
-  \**********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["apiFetch"];
 
 /***/ }),
 

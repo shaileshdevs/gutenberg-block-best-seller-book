@@ -6,14 +6,7 @@
  */
  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
-// .wp-block-shailesh-gutenberg-blocks-best-seller { 
-	/* Reset default styles */
-	// * {
-	// margin: 0;
-	// padding: 0;
-	// box-sizing: border-box;
-	// }
-
+.wp-block-shailesh-gutenberg-blocks-best-seller { 
 	/* Book card container */
 	.book-card {
 		max-width: 651px;
@@ -89,4 +82,4 @@
 			}
 		}
 	}
-// }
+}

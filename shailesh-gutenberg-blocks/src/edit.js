@@ -1,9 +1,3 @@
-import { useState, useEffect, useRef } from '@wordpress/element';
-// import { registerBlockType } from '@wordpress/blocks';
-import apiFetch from '@wordpress/api-fetch';
-import GenreSelection from './GenreSelection.js';
-import BookDetails from './BookDetails.js';
-
 /**
  * Retrieves the translation of text.
  *
@@ -17,11 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
-
-import {
-	Button, SelectControl, TextControl, Spinner
-} from "@wordpress/components";
+import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -35,6 +25,8 @@ import './editor.scss';
  * Internal dependencies.
  */
 import SettingsPane from './edit-settings-pane';
+import GenreSelection from './GenreSelection.js';
+import BookDetails from './BookDetails.js';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -46,12 +38,6 @@ import SettingsPane from './edit-settings-pane';
  */
 export default function Edit( props ) {
 	const blockProps = useBlockProps();
-
-	const { attributes, setAttributes } = props;
-	const { selectedGenre, genreName, bestSellingBook } = attributes;
-
-	// console.log( 'shvsh props' );
-	// console.log(props)
 
 	return (
 		<div {...blockProps}>
