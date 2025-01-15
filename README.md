@@ -60,7 +60,7 @@ This plugin leverages the Biblio REST API for fetching data. The following endpo
 <h4>Steps</h4>
 <hr />
 
-*Step 1 - Go to Post Edit Page*
+*Step 1 - Go to Post/ Page Edit Page*
 
 *Step 2 - Search the Gutenberg block Best Seller and include it in the Post*
 
