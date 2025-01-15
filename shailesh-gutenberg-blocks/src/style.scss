@@ -1,0 +1,92 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+// .wp-block-shailesh-gutenberg-blocks-best-seller { 
+	/* Reset default styles */
+	// * {
+	// margin: 0;
+	// padding: 0;
+	// box-sizing: border-box;
+	// }
+
+	/* Book card container */
+	.book-card {
+		max-width: 651px;
+		max-height: 640px;
+		border: 1px solid #0000FF;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #E6E6E6;
+		
+		/* Header styling */
+		.header {
+			font-family: 'Roboto', sans-serif;
+			font-size: 25px;
+			font-weight: 700;
+			margin-bottom: 32px;
+		}
+		
+		/* Content area styling */
+		.content {
+			background-color: #E6E6E6;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			
+			/* Book cover image */
+			a {
+				outline: 0;
+	
+				.book-cover {
+					outline: 0;
+				}
+			}
+	
+			/* Book title */
+			.title {
+				font-family: 'Roboto', sans-serif;
+				font-size: 24px;
+				font-weight: 600;
+				margin-bottom: 8px;
+				text-align: center;
+			}
+	
+			/* Author text */
+			.author {
+				font-family: 'Roboto', sans-serif;
+				font-size: 16px;
+				font-weight: 400;
+				margin-bottom: 16px;
+				text-align: center;
+			}
+			
+			/* Buy button */
+			.buy-button {
+				font-family: 'Roboto', sans-serif;
+				font-size: 16px;
+				font-weight: 600;
+				background-color: #FF6401;
+				border: none;
+				outline: none;
+				padding: 8px 24px;
+				cursor: pointer;
+				margin-bottom: 32px;
+			}
+	
+			/* Publisher logo */
+			.publisher-logo {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+// }

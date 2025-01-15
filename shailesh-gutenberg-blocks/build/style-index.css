@@ -1,0 +1,83 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap);
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss (1) ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+/* Reset default styles */
+/* Book card container */
+.book-card {
+  max-width: 651px;
+  max-height: 640px;
+  border: 1px solid #0000FF;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E6E6E6;
+  /* Header styling */
+  /* Content area styling */
+}
+.book-card .header {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.book-card .content {
+  background-color: #E6E6E6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* Book cover image */
+  /* Book title */
+  /* Author text */
+  /* Buy button */
+  /* Publisher logo */
+}
+.book-card .content a {
+  outline: 0;
+}
+.book-card .content a .book-cover {
+  outline: 0;
+}
+.book-card .content .title {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.book-card .content .author {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.book-card .content .buy-button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FF6401;
+  border: none;
+  outline: none;
+  padding: 8px 24px;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+.book-card .content .publisher-logo {
+  width: 40px;
+  height: 40px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
