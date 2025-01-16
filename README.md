@@ -67,5 +67,5 @@ This plugin leverages the Biblio REST API for fetching data. The following endpo
 
 *Step 3 - Add and Configure block.
 
-*Step 4 - That's it. View Your Best Seller Book on the Post*
+*Step 4 - That's it. View Your Best Seller Book on the Post/ Page*
 ![Best Seller Book on Post](best-seller-book-on-post.png "Best Seller Book Gutenberg Block")
