@@ -26,9 +26,6 @@ const BookDetails = ( { props } ) => {
                     const linkData  = book?.affiliateLinks.find( (linkData) => "amazon" === linkData?.affiliateType );
                     const amazonUrl = linkData ? linkData?.url : '';
             
-                    console.log('shvsh book')
-                    console.log( book );
-
                     const tempBestSellingBook = {
                         title: book.title,
                         author_1: {
