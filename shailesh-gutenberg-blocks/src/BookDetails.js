@@ -13,7 +13,7 @@ const BookDetails = ( { props } ) => {
             async function fetchBestSellingBook() {
                 try {
                     const response = await fetch(
-                        `https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/works/views/uk-list-display?api_key=7fqge2qgxcdrwqbcgeywwdj2&catUri=${selectedGenre}`,
+                        `https://api.penguinrandomhouse.com/resources/v2/title/domains/PRH.UK/works/views/uk-list-display?api_key=7fqge2qgxcdrwqbcgeywwdj2&catUri=${selectedGenre}&catSetId=PW&&sort=weeklySales&dir=desc&rows=15`,
                         {
                             method: 'GET',
                             credentials: 'omit',
@@ -23,18 +23,24 @@ const BookDetails = ( { props } ) => {
                     const responseData = await response.json();
                     const book         = responseData?.data?.works[0];
 
+                    const linkData  = book?.affiliateLinks.find( (linkData) => "amazon" === linkData?.affiliateType );
+                    const amazonUrl = linkData ? linkData?.url : '';
+            
+                    console.log('shvsh book')
+                    console.log( book );
+
                     const tempBestSellingBook = {
                         title: book.title,
                         author_1: {
                             name: book?.authors?.[0]?.authorDisplay,
-                            url: book?.authors?.[0]?.seoFriendlyUrl ? "https://www.penguin.co.uk/" + book.authors[0].seoFriendlyUrl: ""
+                            url: book?.authors?.[0]?.seoFriendlyUrl ? "https://www.penguin.co.uk" + book.authors[0].seoFriendlyUrl: ""
                         },
                         author_2: {
                             name: book?.authors?.[1]?.authorDisplay,
-                            url: book?.authors?.[1]?.seoFriendlyUrl ? "https://www.penguin.co.uk/" + book.authors[1].seoFriendlyUrl: ""
+                            url: book?.authors?.[1]?.seoFriendlyUrl ? "https://www.penguin.co.uk" + book.authors[1].seoFriendlyUrl: ""
                         },
                         coverImageUrl: book.coverUrls.medium.coverUrl,
-                        amazonUrl: book?.affiliateLinks?.[0]?.url,
+                        amazonUrl: amazonUrl,
                         penguineBookUrl: "https://www.penguin.co.uk/" + book?.seoFriendlyUrl
                     };
 
