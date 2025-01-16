@@ -21,8 +21,13 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_shailesh_gutenberg_blocks_block_init() {
-	register_block_type( __DIR__ . '/build' );
+    if ( current_user_can( 'edit_others_posts' ) ) {
+        register_block_type( __DIR__ . '/build' );
+
+        add_action( 'admin_enqueue_scripts', 'enqueue_select2_assets' );
+    }
 }
+
 add_action( 'init', 'create_block_shailesh_gutenberg_blocks_block_init' );
 
 function enqueue_select2_assets() {
@@ -30,4 +35,5 @@ function enqueue_select2_assets() {
     wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js', [ 'jquery' ], '4.1.0', true );
     wp_enqueue_style( 'select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css', [], '4.1.0' );
 }
-add_action( 'admin_enqueue_scripts', 'enqueue_select2_assets' );
+
+error_log('shvsh' );

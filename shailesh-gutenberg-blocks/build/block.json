@@ -7,6 +7,10 @@
   "category": "widgets",
   "icon": "smiley",
   "description": "Best Seller.",
+  "keywords": [
+    "selling",
+    "book"
+  ],
   "supports": {
     "html": true
   },

@@ -690,7 +690,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"shailesh-gutenberg-blocks/best-seller","version":"0.1.0","title":"Best Seller","category":"widgets","icon":"smiley","description":"Best Seller.","supports":{"html":true},"attributes":{"selectedGenre":{"type":"string","default":""},"genreName":{"type":"string","default":""},"bestSellerLabel":{"type":"string","default":"Bestsellers"},"bestSellingBook":{"type":"object","default":{"title":"","author_1":{},"author_2":{},"coverImageUrl":"","amazonUrl":"","penguineBookUrl":""}}},"textdomain":"shailesh-gutenberg-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"shailesh-gutenberg-blocks/best-seller","version":"0.1.0","title":"Best Seller","category":"widgets","icon":"smiley","description":"Best Seller.","keywords":["selling","book"],"supports":{"html":true},"attributes":{"selectedGenre":{"type":"string","default":""},"genreName":{"type":"string","default":""},"bestSellerLabel":{"type":"string","default":"Bestsellers"},"bestSellingBook":{"type":"object","default":{"title":"","author_1":{},"author_2":{},"coverImageUrl":"","amazonUrl":"","penguineBookUrl":""}}},"textdomain":"shailesh-gutenberg-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
