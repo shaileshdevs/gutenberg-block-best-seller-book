@@ -64,6 +64,10 @@
   font-weight: 400;
   margin-bottom: 16px;
   text-align: center;
+  color: #444;
+}
+.wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .author a {
+  color: #444;
 }
 .wp-block-shailesh-gutenberg-blocks-best-seller .book-card .content .buy-button {
   font-family: "Roboto", sans-serif;

@@ -35,5 +35,3 @@ function enqueue_select2_assets() {
     wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js', [ 'jquery' ], '4.1.0', true );
     wp_enqueue_style( 'select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css', [], '4.1.0' );
 }
-
-error_log('shvsh' );
