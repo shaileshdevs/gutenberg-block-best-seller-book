@@ -36,10 +36,11 @@ This plugin leverages the Biblio REST API for fetching data. The following endpo
 
 ## Installation
 
-1. Clone this repository to your WordPress installation's `wp-content/plugins` directory:
+1. Clone this repository to your system:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    ```
+2. Move the folder `shailesh-gutenberg-blocks` to your WordPress installation's `wp-content/plugins` directory.
 2. Activate the plugin via the WordPress admin dashboard.
 3. Add the block to any post or page and start displaying the best-selling books by genre.
 
